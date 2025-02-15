@@ -9,12 +9,11 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+I have no idea yet! But something something counting and showing it on 7-segment.
 
 ## How to test
 
-Explain how to use your project
-
+Enable it, get a clock and watch it work.
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+7-segment display from demo board
