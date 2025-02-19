@@ -8,7 +8,7 @@ It wraps around when reaching the max value.
 The value of the first dipswitch decides whether it counts up or down.
 Reset sets the value back to 0.
 
-## How to testWWx½x½
+## How to test
 
 Power it up and observe 7 segment display behaviour.
 
