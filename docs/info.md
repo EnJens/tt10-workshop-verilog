@@ -1,19 +1,17 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
-
 ## How it works
 
-I have no idea yet! But something something counting and showing it on 7-segment.
+It takes the input clock (10Mhz), subdivides it into 1Hz clock and
+either counts up or down on the 7 segment display.
 
-## How to test
+It wraps around when reaching the max value.
 
-Enable it, get a clock and watch it work.
+The value of the first dipswitch decides whether it counts up or down.
+Reset sets the value back to 0.
+
+## How to testWWx½x½
+
+Power it up and observe 7 segment display behaviour.
+
 ## External hardware
 
-7-segment display from demo board
+7-segment display from demo board and dipswitch.
