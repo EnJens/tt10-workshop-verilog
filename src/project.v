@@ -22,9 +22,6 @@ module tt_um_enjens (
   wire  direction;
 
   // All output pins must be assigned. If not used, assign to 0
-//  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
-  //assign uo_out[7] = 0;
-  assign uio_out = 0;
   assign uio_oe  = 0;
   assign reset = !rst_n;
   assign direction = ui_in[0];
@@ -60,7 +57,7 @@ module tt_um_enjens (
    end
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, rst_n, 1'b0};
+  wire _unused = &{ena, rst_n, ui_in[7:1], 1'b0};
 
   assign uo_out = {1'b0, o_number};
 
