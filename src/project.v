@@ -18,13 +18,11 @@ module tt_um_enjens (
 
   reg [3:0] number = 0;
   wire [6:0] o_number;
-  wire reset;
   wire  direction;
 
   // All output pins must be assigned. If not used, assign to 0
   assign uio_oe  = 0;
   assign uio_out = 0;
-  assign reset = !rst_n;
   assign direction = ui_in[0];
   wire tick_clk;
 
@@ -39,9 +37,13 @@ module tt_um_enjens (
       .o_clk(tick_clk)
    );
 
-   always @(posedge tick_clk, posedge reset)
+   always @(posedge tick_clk)
    begin
-    if (reset || (direction && number >= 9)) begin
+    if (!rst_n)
+    begin
+      number <= 0;
+    end else if (direction && number >= 9))
+    begin
       number <= 0;
     end else if (!direction && number <= 0)
     begin
@@ -57,7 +59,7 @@ module tt_um_enjens (
    end
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, rst_n, ui_in[7:1], uio_in, 1'b0};
+  wire _unused = &{ena, ui_in[7:1], uio_in, 1'b0};
 
   assign uo_out = {1'b0, o_number};
 
