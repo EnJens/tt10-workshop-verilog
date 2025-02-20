@@ -23,9 +23,9 @@ module tt_um_enjens (
 
   // All output pins must be assigned. If not used, assign to 0
   assign uio_oe  = 0;
+  assign uio_out = 0;
   assign reset = !rst_n;
   assign direction = ui_in[0];
-  //assign number = 0;
   wire tick_clk;
 
   binary_to_7segment btoseven(
@@ -57,7 +57,7 @@ module tt_um_enjens (
    end
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, rst_n, ui_in[7:1], 1'b0};
+  wire _unused = &{ena, rst_n, ui_in[7:1], uio_in, 1'b0};
 
   assign uo_out = {1'b0, o_number};
 
