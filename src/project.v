@@ -42,7 +42,7 @@ module tt_um_enjens (
     if (!rst_n)
     begin
       number <= 0;
-    end else if (direction && number >= 9))
+    end else if (direction && number >= 9)
     begin
       number <= 0;
     end else if (!direction && number <= 0)
