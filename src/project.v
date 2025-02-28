@@ -37,7 +37,7 @@ module tt_um_enjens (
       .o_clk(tick_clk)
    );
 
-    always @(posedge clk)
+    always @(posedge tick_clk)
     begin
       if (!rst_n)
       begin
