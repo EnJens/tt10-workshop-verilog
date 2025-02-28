@@ -35,11 +35,11 @@ async def test_project(dut):
 
     assert dut.uo_out.value != 0x7e
     dut.rst_n.value = 0
-    await ClockCycles(dut.clk, 2)
+    await ClockCycles(dut.clk, 3)
     assert dut.uo_out.value == 0x7e
 
     dut.rst_n.value = 1
-    dut.ui_in = 0
+    dut.ui_in.value = 0
     await ClockCycles(dut.clk, 2)
 
     dut._log.info('Testing negative')
@@ -52,6 +52,6 @@ async def test_project(dut):
     await ClockCycles(dut.clk, 1)
     assert dut.uo_out.value != 0x7e
     dut.rst_n.value = 0
-    await ClockCycles(dut.clk, 2)
+    await ClockCycles(dut.clk, 3)
     assert dut.uo_out.value == 0x7e
 

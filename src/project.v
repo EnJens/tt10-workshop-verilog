@@ -37,12 +37,16 @@ module tt_um_enjens (
       .o_clk(tick_clk)
    );
 
+    always @(posedge clk)
+    begin
+      if (!rst_n)
+      begin
+        number <= 0;
+      end
+    end
    always @(posedge tick_clk)
    begin
-    if (!rst_n)
-    begin
-      number <= 0;
-    end else if (direction && number >= 9)
+  if (direction && number >= 9)
     begin
       number <= 0;
     end else if (!direction && number <= 0)
